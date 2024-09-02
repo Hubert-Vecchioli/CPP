@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.class.hpp                                     :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/28 17:34:58 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/19 14:32:48 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 13:54:11 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_CLASS_HPP
-# define HARL_CLASS_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
+# include <iostream>
 
-class Harl
+class Zombie
 {
-private:
-	void debug_( void );
-	void info_( void );
-	void warning_( void );
-	void error_( void );
-public:
-	Harl(void);
-	~Harl(void);
-	void complain( std::string level );
-};
+	private:
+		std::string name_;
+	public:
+		Zombie( void );
+		Zombie( std::string name );
+		~Zombie(void);
+		void announce(void) const;
+		void setName( std::string name );
 
+};
 #endif

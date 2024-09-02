@@ -5,16 +5,16 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= more_brains
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Weapon.class.cpp \
-		HumanA.class.cpp \
-		HumanB.class.cpp
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

@@ -6,13 +6,13 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:08:13 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/23 14:19:07 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:55:21 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Weapon.class.hpp>
-#include <HumanA.class.hpp>
-#include <HumanB.class.hpp>
+#include <Weapon.hpp>
+#include <HumanA.hpp>
+#include <HumanB.hpp>
 
 int main(void)
 {

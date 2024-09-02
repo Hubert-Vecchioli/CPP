@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.class.cpp                                     :+:      :+:    :+:   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 22:45:38 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/26 15:20:45 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 16:52:36 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.class.hpp"
+#include "Harl.hpp"
 
 	Harl::Harl(void)
 	{
@@ -65,7 +65,6 @@
 			this->error_();
 			break ;
 		default:
-			std::cout << "Invalid level input, please retry" << std::endl;
-			std::cout << "Available options are DEBUG, INFO, WARNING and ERROR" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		}
 	}

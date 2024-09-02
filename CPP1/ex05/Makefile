@@ -5,14 +5,14 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= Harl
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Harl.class.cpp
+		Harl.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

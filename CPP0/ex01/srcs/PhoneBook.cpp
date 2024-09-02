@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:53:34 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/21 02:07:31 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 12:02:38 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PhoneBook.class.hpp"
+# include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) : id_(0)
 {
@@ -58,7 +58,19 @@ void	PhoneBook::ft_search_contact(void) const
 		std::cout << "You request the contact id #";
 		std::cout << input << std::endl;
 		this->contact_[input].ft_display();	
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return ;
+	}
+	else if (std::cin.eof())
+	{
+		return ;
 	}
 	else
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Invalid input - Aborting SEARCH." << std::endl;
+		return ;
+	}
 }

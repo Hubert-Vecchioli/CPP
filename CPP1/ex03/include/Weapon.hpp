@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.class.cpp                                   :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 14:32:50 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/23 14:51:57 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/19 14:32:48 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 13:54:43 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Weapon.class.hpp"
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-Weapon::Weapon( std::string type )
-{	
-	this->setType(type);
-	std::cout << this->type_ << " is being constructed" << std::endl;
-}
+# include <iostream>
 
-Weapon::~Weapon(void)
+class Weapon
 {
-	std::cout << this->type_ << " is being deleted" << std::endl;
-}
-std::string const &Weapon::getType(void) const
-{
-	return(this->type_);
-}
-
-void Weapon::setType( std::string type )
-{
-	this->type_ = type;
-}
+	private:
+		std::string type_;
+	public:
+		Weapon( std::string type );
+		~Weapon(void);
+		const std::string &getType(void) const;
+		void setType( std::string type );
+};
+#endif

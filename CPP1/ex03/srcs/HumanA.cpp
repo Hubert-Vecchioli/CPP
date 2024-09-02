@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:32:50 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/23 14:52:04 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:54:48 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "HumanA.class.hpp"
+# include "HumanA.hpp"
 
 HumanA::HumanA( std::string name,  Weapon &weapon): name_(name), weapon_(weapon)
 {	

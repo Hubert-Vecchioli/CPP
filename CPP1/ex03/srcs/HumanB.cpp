@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.class.cpp                                   :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:32:50 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/22 10:05:00 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 13:55:24 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Zombie.class.hpp"
+# include "HumanB.hpp"
 
-Zombie::Zombie( void )
-{
-	std::cout << "A new Zombie is being constructed" << std::endl;
+HumanB::HumanB(  std::string name  ): name_(name)
+{	
+	std::cout << this->name_ << " is being constructed without any weapon" << std::endl;
 }
 
-Zombie::Zombie( std::string name ): name_(name)
+HumanB::~HumanB(void)
 {
-	std::cout << this->name_ << " is being constructed" << std::endl;
+	std::cout << this->name_ << " is being deleted" << std::endl;
+}
+void HumanB::attack( void )
+{
+	std::cout << this->name_ << " attacks with their " << this->weapon_->getType() << std::endl;
 }
 
-Zombie::~Zombie(void)
+void HumanB::setWeapon( Weapon &weapon )
 {
-	std::cout << this->name_ << " is being erased from Earth..." << std::endl;
-}
-
-void Zombie::announce(void) const
-{
-	std::cout << this->name_ << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-void Zombie::setName( std::string name )
-{
-	this->name_ = name;
+	this->weapon_ = &weapon;
 }

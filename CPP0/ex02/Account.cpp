@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 01:32:32 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/20 00:33:42 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 12:17:02 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,17 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account( int initial_deposit ): 
-_amount(initial_deposit), _accountIndex(_nbAccounts),
-_nbDeposits(0), _nbWithdrawals(0),
-_totalNbDeposits(0), 
+_accountIndex(_nbAccounts),
+_amount(initial_deposit),
+_nbDeposits(0),
+_nbWithdrawals(0) 
 {
 	Account::_nbAccounts += 1;
 	Account::_totalAmount += _amount;
+	this->_displayTimestamp();
+	std::cout << "index:" << Account::_accountIndex << ";";
+	std::cout << "amount:" << Account::_amount << ";";
+	std::cout << "created" << std::endl;
 }
 
 Account::~Account(void)
@@ -103,7 +108,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	this->_displayTimestamp();
 	std::cout << "index:" << Account::_accountIndex << ";";
 	std::cout << "p_amount:" << Account::_amount << ";";
-	std::cout << "withdrawal:" << withdrawal << ";";
+	std::cout << "withdrawal:";
 	if (withdrawal > checkAmount())
 	{
 		std::cout << "refused" << std::endl;

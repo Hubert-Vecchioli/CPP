@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.class.hpp                                   :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/19 14:32:48 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/23 14:17:41 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/13 14:53:36 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 11:04:18 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_CLASS_HPP
-# define WEAPON_CLASS_HPP
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
+# include "Contact.hpp"
 # include <iostream>
+# include <limits>
 
-class Weapon
-{
+class PhoneBook {
 	private:
-		std::string type_;
-	public:
-		Weapon( std::string type );
-		~Weapon(void);
-		const std::string &getType(void) const;
-		void setType( std::string type );
+		Contact		contact_[8];
+		int			id_;
+	public: 
+		PhoneBook(void);
+		~PhoneBook(void);
+		void	ft_add_contact(void);
+		void	ft_list_contacts(void) const;
+		void	ft_search_contact(void) const;
 };
+
 #endif

@@ -5,8 +5,8 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= megaphone
-CC 				= g++
-CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
+CC 				= c++
+CFLAGS 			= -Wall -Werror -Wextra -std=c++98
 
 #******************************  SOURCE  *************************************#
 

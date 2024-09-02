@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/13 14:53:36 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/21 02:07:37 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 16:51:28 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-# include "Contact.class.hpp"
-# include <iostream>
-# include <limits>
+#include <iostream>
+#include <cstdlib>
 
-class PhoneBook {
-	private:
-		Contact		contact_[8];
-		int			id_;
-	public: 
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	ft_add_contact(void);
-		void	ft_list_contacts(void) const;
-		void	ft_search_contact(void) const;
+class Harl
+{
+private:
+	void debug_( void );
+	void info_( void );
+	void warning_( void );
+	void error_( void );
+public:
+	Harl(void);
+	~Harl(void);
+	void complain( std::string level );
 };
 
 #endif

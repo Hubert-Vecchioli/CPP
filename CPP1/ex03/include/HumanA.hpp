@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   File.class.hpp                                     :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/25 13:55:59 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/19 14:32:48 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 13:54:28 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILE_CLASS_HPP
-# define FILE_CLASS_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-#include <iostream>
-#include <fstream>
+# include "Weapon.hpp"
 
-class File
+class HumanA
 {
-private:
-	std::string name_;
-	std::ifstream fstrm_;
-public:
-	File(std::string name);
-	~File(void);
-	void replace(std::string s1, std::string s2);
+	private:
+		std::string name_;
+		Weapon &weapon_;
+	public:
+		HumanA( std::string name,  Weapon &weapon);
+		~HumanA(void);
+		void attack( void );
 };
-
 #endif

@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 15:08:11 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/22 09:40:13 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 10:26:14 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#include "Zombie.hpp"
 
 Zombie *newZombie( std::string name )
 {

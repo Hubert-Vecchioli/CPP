@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 14:53:26 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/21 02:06:49 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 11:10:44 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void)
 {
@@ -28,10 +28,15 @@ std::string Contact::getInput_(std::string str) const
 	std::getline(std::cin, input);
 	while (input.empty() || !std::cin.good())
 	{
+		if (std::cin.eof())
+		{
+			break;
+		}
 		std::cin.clear();
+		input.clear();
 		std::cout << "Invalid input" << std::endl;
 		std::cout << str << std::endl;
-		std::cin >> input;
+		std::getline(std::cin, input);
 		if (!input.empty() && std::cin.good())
 		{
 			break;
@@ -50,10 +55,20 @@ std::string Contact::getLimitedDisplay_(std::string str) const
 void	Contact::ft_create_contact(void)
 {
 	this->firstName_ = this->getInput_("Please enter the first name: ");
+	if (this->firstName_.empty())
+		return ;
 	this->lastName_ = this->getInput_("Please enter the last name: ");
+	if (this->lastName_.empty())
+		return ;
 	this->nickName_ = this->getInput_("Please enter the nickname: ");
+	if (this->nickName_.empty())
+		return ;
 	this->phoneNumber_ = this->getInput_("Please enter the phone number: ");
+	if (this->phoneNumber_.empty())
+		return ;
 	this->darkestSecret_ = this->getInput_("Please enter the darkest secret: ");
+	if (this->darkestSecret_.empty())
+		return ;
 }
 
 void	Contact::ft_display_to_search(int i) const

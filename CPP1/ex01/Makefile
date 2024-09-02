@@ -5,14 +5,14 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= more_brains
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Zombie.class.cpp \
+		Zombie.cpp \
 		zombieHorde.cpp 
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs

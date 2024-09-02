@@ -5,15 +5,15 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= myawesomephonebook
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Contact.class.cpp \
-		PhoneBook.class.cpp 
+		Contact.cpp \
+		PhoneBook.cpp 
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

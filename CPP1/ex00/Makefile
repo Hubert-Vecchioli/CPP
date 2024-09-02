@@ -5,14 +5,14 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= braiiiinnnzzz
-CC 				= g++
-CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
+CC 				= c++
+CFLAGS 			= -Wall -Werror -Wextra -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Zombie.class.cpp \
+		Zombie.cpp \
 		newZombie.cpp \
 		randomChump.cpp 
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.class.hpp                                     :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/28 17:33:11 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:46:00 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_CLASS_HPP
-# define HARL_CLASS_HPP
+#ifndef FILE_HPP
+# define FILE_HPP
 
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 
-class Harl
+class File
 {
 private:
-	void debug_( void );
-	void info_( void );
-	void warning_( void );
-	void error_( void );
+	std::string name_;
+	std::ifstream fstrm_;
 public:
-	Harl(void);
-	~Harl(void);
-	void complain( std::string level );
+	File(std::string name);
+	~File(void);
+
+	void replace(std::string s1, std::string s2);
 };
 
 #endif
