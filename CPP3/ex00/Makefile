@@ -12,7 +12,7 @@ CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 INCS = ./include
 PATHS = main.cpp \
-		ClapTrap.class.cpp
+		ClapTrap.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

@@ -4,7 +4,7 @@
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= ScavTrap
+NAME			= FragTrap
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
@@ -13,6 +13,7 @@ CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 INCS = ./include
 PATHS = main.cpp \
 		ClapTrap.cpp \
+		FragTrap.cpp \
 		ScavTrap.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
