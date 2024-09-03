@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:28 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:28 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:12:52 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 DiamondTrap::DiamondTrap( void )
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
-	this->name_ = "No name";
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 500;
-	this->attackDamage_ = 20;
+	this->name_ = this->ScavTrap::name_;
+	this->ClapTrap::name_ = this->name_ + "_clap_name";
+	this->hitPoint_ = this->FragTrap::hitPoint_;
+	this->energyPoint_ = this->ScavTrap::energyPoint_;
+	this->attackDamage_ = this->FragTrap::;
 }
 
 
