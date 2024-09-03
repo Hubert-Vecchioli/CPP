@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/01 00:32:20 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:03:18 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_CLASS_HPP
-# define CLAPTRAP_CLASS_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
-class ClapTrap
+class Fixed
 {
 private:
-	std::string name_;
-	int	hitPoint_;
-	int	energyPoint_;
-	int	attackDamage_;
-	
-	ClapTrap(void);
+	int rawBits_;
+	static const int numBits_ = 8;
 public:
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const & src);
-	~ClapTrap(void);
-	ClapTrap & operator=(ClapTrap const & rhs);
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	Fixed(void);
+	Fixed(Fixed const & fixed);
+	Fixed & operator =(Fixed const & rhs);
+	~Fixed(void);
+	int getRawBits( void ) const;
+	void setRawBits( int const raw );
 };
 
 #endif

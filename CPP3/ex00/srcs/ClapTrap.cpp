@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.class.cpp                                 :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 22:45:38 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/01 22:46:28 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 08:29:33 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
+#include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void): name_("No name"), hitPoint_(10), energyPoint_(10), attackDamage_(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
@@ -30,6 +30,8 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 {
+	if (this == &rhs)
+		return (*this);
 	std::cout << "ClapTrap operator = called" << rhs.name_ << std::endl;
 	this->name_ = rhs.name_;
 	this->hitPoint_ = rhs.hitPoint_;

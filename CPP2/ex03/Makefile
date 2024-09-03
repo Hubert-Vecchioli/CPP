@@ -5,15 +5,15 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= BSP
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Point.class.cpp \
-		Fixed.class.cpp \
+		Point.cpp \
+		Fixed.cpp \
 		bsp.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs

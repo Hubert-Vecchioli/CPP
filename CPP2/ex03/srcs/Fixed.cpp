@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 22:45:38 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/30 08:48:55 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:07:38 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed(void): intValue_(0)
 {

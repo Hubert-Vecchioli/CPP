@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/01 00:32:20 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/08/30 07:45:38 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/02 22:04:38 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_CLASS_HPP
-# define CLAPTRAP_CLASS_HPP
+#ifndef POINT_HPP
+# define POINT_HPP
 
-#include <iostream>
+#include "Fixed.hpp"
 
-class ClapTrap
+class Point
 {
 private:
-	std::string name_;
-	int	hitPoint_;
-	int	energyPoint_;
-	int	attackDamage_;
-	
-	ClapTrap(void);
+	Fixed x_;
+	Fixed y_;
 public:
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const & src);
-	~ClapTrap(void);
-	ClapTrap & operator=(ClapTrap const & rhs);
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	Point(void);
+	Point(const float x, const float y);
+	Point(Point const & point);
+	~Point(void);
+	
+	Point & operator=(Point const & rhs);
+	Fixed getX( void ) const;
+	Fixed getY( void ) const;
 };
 
 #endif

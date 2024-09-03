@@ -5,14 +5,15 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= ClapTrap
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		ClapTrap.class.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 08:01:41 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/01 00:27:48 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:07:34 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.class.hpp"
+#include "Point.hpp"
 
 static Fixed ft_get_triangle_area(Point const a, Point const b, Point const c)
 {

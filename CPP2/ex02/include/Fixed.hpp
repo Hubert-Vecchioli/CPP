@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/30 08:48:09 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:03:59 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
@@ -27,7 +27,6 @@ public:
 	Fixed(Fixed const & fixed);
 	~Fixed(void);
 
-	Fixed abs(void) const;
 	Fixed & operator =(Fixed const & rhs);
 	bool operator>(Fixed const & rhs) const;
 	bool operator<(Fixed const & rhs) const;

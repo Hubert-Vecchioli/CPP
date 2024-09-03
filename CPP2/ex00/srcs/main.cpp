@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:07:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/29 06:55:28 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:03:30 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.class.hpp"
+#include "Fixed.hpp"
 
 int main( void )
 {

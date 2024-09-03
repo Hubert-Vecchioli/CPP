@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/29 22:46:06 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:02:35 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_HPP
-# define FIXED_CLASS_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 #include <iostream>
 
@@ -25,35 +25,12 @@ public:
 	Fixed(const int intInput);
 	Fixed(const float floatInput);
 	Fixed(Fixed const & fixed);
-	~Fixed(void);
-
 	Fixed & operator =(Fixed const & rhs);
-	bool operator>(Fixed const & rhs) const;
-	bool operator<(Fixed const & rhs) const;
-	bool operator>=(Fixed const & rhs) const;
-	bool operator<=(Fixed const & rhs) const;
-	bool operator!=(Fixed const & rhs) const;
-	bool operator==(Fixed const & rhs) const;
-	Fixed operator+(Fixed const & rhs) const;
-	Fixed operator-(Fixed const & rhs) const;
-	Fixed operator*(Fixed const & rhs) const;
-	Fixed operator/(Fixed const & rhs) const;
-
-	Fixed operator++(int);
-	Fixed operator--(int);
-	Fixed & operator++(void);
-	Fixed & operator--(void);
-
+	~Fixed(void);
 	int getRawBits( void ) const;
 	void setRawBits( int const raw );
-
 	float toFloat( void ) const;
 	int toInt( void ) const;
-
-	static Fixed const & min(Fixed const & fixed_1, Fixed const & fixed_2);
-	static Fixed const & max(Fixed const & fixed_1, Fixed const & fixed_2);
-	static Fixed & min(Fixed & fixed_1, Fixed & fixed_2);
-	static Fixed & max(Fixed & fixed_1, Fixed & fixed_2);
 };
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs);

@@ -6,12 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:07:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/01 22:49:18 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 08:13:37 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.class.hpp"
-//#include <string>
+#include "ClapTrap.hpp"
 
 int	main(void) {
 	std::string trapName0 = "Obi-wan";

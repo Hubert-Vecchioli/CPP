@@ -5,14 +5,14 @@
 #******************************  COMPILER  ***********************************#
 
 NAME			= TopCanon
-CC 				= g++
+CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
 PATHS = main.cpp \
-		Fixed.class.cpp
+		Fixed.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:07:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/08/31 11:29:15 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/02 22:07:43 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.class.hpp"
+#include "Point.hpp"
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
 
