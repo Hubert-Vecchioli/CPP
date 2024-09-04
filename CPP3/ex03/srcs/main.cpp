@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:07:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:11:24 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 23:18:40 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 	ClapTrap	jedi("Obi-wan");
 	ScavTrap	sith("Anakin");
 	FragTrap	droid("C3PO");
+	DiamondTrap	diamond("Yoda");
 
 	jedi.attack("Anakin");
 	sith.takeDamage(jedi.getAttackDamage());
@@ -31,5 +32,7 @@ int	main(void)
 	sith.takeDamage(jedi.getAttackDamage());
 	sith.guardGate();
 	droid.highFivesGuys();
+	diamond.whoAmI();
+	diamond.attack("Anakin");
 	return (0);
 }

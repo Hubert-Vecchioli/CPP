@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:48:57 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:00:16 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 23:44:39 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 private:
 		bool isGuardGate_;

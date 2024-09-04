@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:02:31 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 23:44:09 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
 public:
 	FragTrap(void);

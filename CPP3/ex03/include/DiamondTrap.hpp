@@ -6,10 +6,9 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 17:07:56 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 23:23:39 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP

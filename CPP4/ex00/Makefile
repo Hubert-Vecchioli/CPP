@@ -1,12 +1,12 @@
 ###############################################################################
-#********************** Makefile for CPP03 project  **************************#
+#********************** Makefile for CPP04 project  **************************#
 ###############################################################################
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= DiamondTrap
+NAME			= Polymorphisme
 CC 				= c++
-CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
+CFLAGS 			= -Wall -Werror -Wextra  -std=c++98
 
 #******************************  SOURCE  *************************************#
 
@@ -14,7 +14,6 @@ INCS = ./include
 PATHS = main.cpp \
 		ClapTrap.cpp \
 		FragTrap.cpp \
-		DiamondTrap.cpp \
 		ScavTrap.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs

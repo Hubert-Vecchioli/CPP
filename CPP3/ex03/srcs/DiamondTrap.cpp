@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:28 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 17:12:52 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/03 23:47:31 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ DiamondTrap::DiamondTrap( void )
 	this->ClapTrap::name_ = this->name_ + "_clap_name";
 	this->hitPoint_ = this->FragTrap::hitPoint_;
 	this->energyPoint_ = this->ScavTrap::energyPoint_;
-	this->attackDamage_ = this->FragTrap::;
+	this->attackDamage_ = this->FragTrap::attackDamage_;
 }
 
 
-DiamondTrap::DiamondTrap( std::string name )
+DiamondTrap::DiamondTrap( std::string name ): name_(name)
 {
 	std::cout << "DiamondTrap constructor called with name " << name << std::endl;
-	this->name_ = name;
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 500;
-	this->attackDamage_ = 20;
+	this->ClapTrap::name_ = this->name_ + "_clap_name";
+	this->hitPoint_ = this->FragTrap::hitPoint_;
+	this->energyPoint_ = this->ScavTrap::energyPoint_;
+	this->attackDamage_ = this->FragTrap::attackDamage_;
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const & src )
@@ -55,7 +55,7 @@ DiamondTrap::~DiamondTrap( void )
 	std::cout << "DiamondTrap destructor called with name " << this->name_ << std::endl;
 }
 
-void	DiamondTrap::highFivesGuys( void )
+void	DiamondTrap::whoAmI( void )
 {
-	std::cout << "DiamondTrap " << this->name_ << " is requesting a high five" << std::endl;
+	std::cout << "DiamondTrap " << this->name_ << ", is the son of " << ClapTrap::name_ << std::endl;
 }
