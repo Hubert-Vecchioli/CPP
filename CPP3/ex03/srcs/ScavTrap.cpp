@@ -6,19 +6,16 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 07:49:05 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:13 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:56:36 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ): isGuardGate_(false)
+ScavTrap::ScavTrap( void ): ClapTrap("No name", 100, 50, 20), isGuardGate_(false)
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	this->name_ = "No name";
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 50;
-	this->attackDamage_ = 20;
+	this->energyPoint_=50;
 }
 
 

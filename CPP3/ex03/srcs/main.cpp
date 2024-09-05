@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 14:07:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 23:18:40 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:34:10 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	main(void)
 	sith.guardGate();
 	droid.highFivesGuys();
 	diamond.whoAmI();
+	diamond.display_infos();
 	diamond.attack("Anakin");
 	return (0);
 }

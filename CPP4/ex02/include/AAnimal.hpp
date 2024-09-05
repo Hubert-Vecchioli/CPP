@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:35:16 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/04 12:25:48 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/05 11:27:04 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
-class DiamondTrap: public FragTrap, public ScavTrap
+class AAnimal
 {
-private:
-	std::string name_;
-public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & src);
-	~DiamondTrap(void);
-	DiamondTrap & operator=(DiamondTrap const & rhs);
+	protected:
+		std::string type_;
+	public:
+		AAnimal(void);
+		AAnimal(std::string type);
+		AAnimal(AAnimal const & src);
+		virtual ~AAnimal(void);
+		AAnimal & operator=(AAnimal const & rhs);
 
-	void whoAmI( void );
-	void display_infos(void);
+		virtual void makeSound(void) const = 0;	
+		std::string getType(void) const;	
+		virtual Brain *getBrain(void) const = 0;
 };
 
 #endif

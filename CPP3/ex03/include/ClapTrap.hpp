@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 15:59:51 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 13:36:40 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:47:08 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ protected:
 	ClapTrap(void);
 public:
 	ClapTrap(std::string name);
+	ClapTrap(std::string name, int hitPoint, int energyPoint, int attackDamage);
 	ClapTrap(ClapTrap const & src);
 	~ClapTrap(void);
 	ClapTrap & operator=(ClapTrap const & rhs);

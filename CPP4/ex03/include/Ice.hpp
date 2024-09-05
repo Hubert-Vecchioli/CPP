@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:35:16 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/05 12:22:13 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/05 14:49:37 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "AMateria.hpp"
+class AMateria;
 
-class DiamondTrap: public FragTrap, public ScavTrap
+class Ice : public AMateria
 {
-private:
-	std::string name_;
-public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & src);
-	~DiamondTrap(void);
-	DiamondTrap & operator=(DiamondTrap const & rhs);
+	public:
+		Ice();
+		Ice(Ice const &src);
+		virtual ~Ice();
 
-	void whoAmI( void );
-	void display_infos(void);
+		Ice & operator=(Ice const &);
+
+		Ice* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

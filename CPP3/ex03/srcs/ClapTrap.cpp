@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/25 22:45:38 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 13:45:47 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:46:50 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 ClapTrap::ClapTrap(void): name_("No name"), hitPoint_(10), energyPoint_(10), attackDamage_(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int hitPoint, int energyPoint, int attackDamage): name_(name), hitPoint_(hitPoint), energyPoint_(energyPoint), attackDamage_(attackDamage)
+{
+	std::cout << "ClapTrap mega constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name_(name), hitPoint_(10), energyPoint_(10), attackDamage_(0)

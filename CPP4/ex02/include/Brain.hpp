@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:35:16 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/05 00:50:36 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/05 08:37:43 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-class DiamondTrap: public FragTrap, public ScavTrap
+# include <iostream>
+# define NB_IDEAS 100
+
+class Brain
 {
-private:
-	std::string name_;
-public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & src);
-	~DiamondTrap(void);
-	DiamondTrap & operator=(DiamondTrap const & rhs);
+	private:
+		std::string	ideas_[NB_IDEAS];
+	public:
+		Brain(void);
+		Brain(Brain const &src);
+		virtual ~Brain(void);
+		Brain & operator=(Brain const &rhs);
 
-	void whoAmI( void );
-	void display_infos(void);
+		const std::string *getIdeas(void) const;
+		void setIdea(int index, std::string idea);
+		void setIdeas(const std::string *ideas);
 };
 
 #endif

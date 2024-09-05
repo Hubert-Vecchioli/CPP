@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:35:16 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/05 12:22:11 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/05 14:03:53 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "AMateria.hpp"
 
-class DiamondTrap: public FragTrap, public ScavTrap
+class Cure : public AMateria
 {
-private:
-	std::string name_;
-public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & src);
-	~DiamondTrap(void);
-	DiamondTrap & operator=(DiamondTrap const & rhs);
+	public:
+		Cure(void);
+		Cure(Cure const &src);
+		virtual ~Cure();
 
-	void whoAmI( void );
-	void display_infos(void);
+		Cure & operator=(Cure const &src);
+
+		Cure * clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

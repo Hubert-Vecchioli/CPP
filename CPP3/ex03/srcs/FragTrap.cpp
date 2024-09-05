@@ -6,20 +6,18 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:28 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:07 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:56:53 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void )
+FragTrap::FragTrap( void ): ClapTrap("No name", 100, 100, 30)
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
-	this->name_ = "No name";
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 100;
-	this->attackDamage_ = 30;
+	this->hitPoint_=100;
+	this->attackDamage_= 30;
 }
 
 

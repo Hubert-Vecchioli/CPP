@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 15:59:19 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:35:16 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/04 12:25:48 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/05 12:10:37 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
+#include <iostream>
 
-class DiamondTrap: public FragTrap, public ScavTrap
+class Dog: public AAnimal
 {
-private:
-	std::string name_;
-public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & src);
-	~DiamondTrap(void);
-	DiamondTrap & operator=(DiamondTrap const & rhs);
-
-	void whoAmI( void );
-	void display_infos(void);
+	private:
+		Brain *brain_;
+	public:
+		Dog(void);
+		Dog(Dog const & src);
+		virtual ~Dog(void);
+		Dog & operator=(Dog const & rhs);
+		virtual void makeSound(void) const;
+		Brain	*getBrain(void) const;
 };
 
 #endif

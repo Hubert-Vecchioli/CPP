@@ -6,11 +6,11 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 15:07:28 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/05 11:07:04 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 12:17:47 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
@@ -21,7 +21,7 @@
 int main()
 {
 	{
-		Animal *animals[NB_ANIMALS];
+		AAnimal *animals[NB_ANIMALS];
 
 		for (int i = 0; i < NB_ANIMALS; i++)
 		{
@@ -54,5 +54,9 @@ int main()
 		std::cout << "Idea: " << copy_test.getBrain()->getIdeas()[0] << std::endl;
 		std::cout << "Idea: " << copy_test.getBrain()->getIdeas()[1] << std::endl << std::endl;
 	}
+	// {
+	// 	AAnimal	ghost = AAnimal();
+	// 	ghost.makeSound();
+	// }
 	return (0);
 }

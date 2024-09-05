@@ -6,30 +6,30 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 15:59:28 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/03 23:47:31 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:51:19 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void )
+DiamondTrap::DiamondTrap( void ): ClapTrap("Default_clap_name"), FragTrap(), ScavTrap()
 {
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	this->name_ = this->ScavTrap::name_;
 	this->ClapTrap::name_ = this->name_ + "_clap_name";
-	this->hitPoint_ = this->FragTrap::hitPoint_;
-	this->energyPoint_ = this->ScavTrap::energyPoint_;
-	this->attackDamage_ = this->FragTrap::attackDamage_;
+	this->hitPoint_ = FragTrap::hitPoint_;
+	this->energyPoint_ = ScavTrap::energyPoint_;
+	this->attackDamage_ = FragTrap::attackDamage_;
 }
 
 
-DiamondTrap::DiamondTrap( std::string name ): name_(name)
+DiamondTrap::DiamondTrap( std::string name )
 {
 	std::cout << "DiamondTrap constructor called with name " << name << std::endl;
 	this->ClapTrap::name_ = this->name_ + "_clap_name";
-	this->hitPoint_ = this->FragTrap::hitPoint_;
-	this->energyPoint_ = this->ScavTrap::energyPoint_;
-	this->attackDamage_ = this->FragTrap::attackDamage_;
+	this->hitPoint_ = FragTrap::hitPoint_;
+	this->energyPoint_ = ScavTrap::energyPoint_;
+	this->attackDamage_ = FragTrap::attackDamage_;
 }
 
 DiamondTrap::DiamondTrap( DiamondTrap const & src )
@@ -58,4 +58,11 @@ DiamondTrap::~DiamondTrap( void )
 void	DiamondTrap::whoAmI( void )
 {
 	std::cout << "DiamondTrap " << this->name_ << ", is the son of " << ClapTrap::name_ << std::endl;
+}
+
+void	DiamondTrap::display_infos(void)
+{
+	std::cout << "attack :" << this->attackDamage_ << std::endl;
+	std::cout << "hitpoints :" << this->hitPoint_ << std::endl;
+	std::cout << "energyPoint_ :" << this->energyPoint_ << std::endl;
 }
