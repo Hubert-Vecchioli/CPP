@@ -4,7 +4,7 @@
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= polymorphisme
+NAME			= burn_the_word
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
@@ -15,6 +15,7 @@ PATHS = main.cpp \
 		Animal.cpp \
 		Dog.cpp \
 		Cat.cpp \
+		Brain.cpp \
 		WrongAnimal.cpp \
 		WrongCat.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
