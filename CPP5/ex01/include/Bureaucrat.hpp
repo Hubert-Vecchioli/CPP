@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:53:31 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/06 00:31:37 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/06 08:36:07 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
 
 # define HIGHEST_GRADE 1
 # define LOWEST_GRADE 150
+class Form;
 
 class Bureaucrat
 {
@@ -34,7 +36,8 @@ class Bureaucrat
 		int getGrade(void) const;
 		void incrementGrade(void);
 		void decrementGrade(void);
-		
+		void signForm(Form & form);
+
 		class GradeTooHighException : public std::exception
 		{
 			public:

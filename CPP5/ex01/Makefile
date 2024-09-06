@@ -1,10 +1,10 @@
 ###############################################################################
-#********************** Makefile for CPP04 project  **************************#
+#********************** Makefile for CPP05 project  **************************#
 ###############################################################################
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= interface
+NAME			= maggots
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
@@ -12,11 +12,8 @@ CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 INCS = ./include
 PATHS = main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 
