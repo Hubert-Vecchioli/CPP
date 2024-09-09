@@ -1,10 +1,10 @@
 ###############################################################################
-#********************** Makefile for CPP06 project  **************************#
+#********************** Makefile for CPP04 project  **************************#
 ###############################################################################
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= scalar
+NAME			= interface
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
@@ -12,7 +12,11 @@ CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 INCS = ./include
 PATHS = main.cpp \
-		ScalarConverter.cpp
+		AMateria.cpp \
+		Character.cpp \
+		Cure.cpp \
+		Ice.cpp \
+		MateriaSource.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 
