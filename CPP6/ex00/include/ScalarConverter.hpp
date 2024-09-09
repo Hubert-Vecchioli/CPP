@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 00:15:11 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 08:09:37 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:37:57 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <cfloat>
 # include <limits.h>
 # include <sstream>
+# include <cstdlib> 
 
 class ScalarConverter
 {
@@ -40,6 +41,9 @@ class ScalarConverter
 		static void printFloat_(std::string &input, int type);
 		static void printDouble_(std::string &input, int type);
 		static char convertChar_(const std::string &input);
+		static int convertInt_(const std::string &input);
+		static float convertFloat_(const std::string &input);
+		static double convertDouble_(const std::string &input);
 
 	public:
 		static void convert(std::string &input);

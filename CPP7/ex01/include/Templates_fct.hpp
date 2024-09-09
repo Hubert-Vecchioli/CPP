@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Templates_fct.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 06:33:21 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 10:39:20 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/09 15:34:49 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/09 16:13:05 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef TEMPLATES_FCT_HPP
+# define TEMPLATES_FCT_HPP
 
-int	main(int ac, char **av)
+#include <iostream>
+
+template <typename T, typename U, typename V>
+void iter(T *array, unsigned int lenght, U f(V))
 {
-	if (ac != 2)
+	unsigned int i;
+
+	i = 0;
+	while (i < length)
 	{
-		std::cout << "Please enter one input" << std::endl;
-		return (1);
+		addr[i] = f(addr[i]);
+		i++;
 	}
-	try
-	{
-		std::string str = av[1];
-		ScalarConverter::convert(str);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
 }
+
+template <typename T>
+void	addOne(T & number)
+{
+	number += 1;
+	return ;
+}
+
+#endif

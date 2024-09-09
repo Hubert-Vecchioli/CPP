@@ -5,28 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 06:33:21 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 10:39:20 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/09 14:19:10 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/09 15:46:27 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include <iostream>
+#include "Templates_fct.hpp"
 
-int	main(int ac, char **av)
+int main(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "Please enter one input" << std::endl;
-		return (1);
-	}
-	try
-	{
-		std::string str = av[1];
-		ScalarConverter::convert(str);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	int a = 2;
+	int b = 3;
+
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
 	return (0);
 }

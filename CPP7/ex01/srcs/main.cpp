@@ -5,28 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 06:33:21 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 10:39:20 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/09 15:52:19 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/09 16:16:31 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include <iostream>
+#include "Templates_fct.hpp"
 
-int	main(int ac, char **av)
+int main(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "Please enter one input" << std::endl;
-		return (1);
-	}
-	try
-	{
-		std::string str = av[1];
-		ScalarConverter::convert(str);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
+	int foo [5] = { 16, 2, 77, 40, 12071 };
+	iter(foo, 6, addOne);
 }

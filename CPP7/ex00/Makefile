@@ -4,19 +4,14 @@
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= interface
+NAME			= few_functions
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 #******************************  SOURCE  *************************************#
 
 INCS = ./include
-PATHS = main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp
+PATHS = main.cpp 
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

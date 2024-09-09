@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:53:31 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/06 08:38:05 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/06 10:26:53 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Form
 		Form(Form const &src);
 		~Form();
 		Form & operator=(Form const &src);
+
 		std::string const getName(void) const;
 		bool getSigned(void) const;
 		int getGradeToSign(void) const;

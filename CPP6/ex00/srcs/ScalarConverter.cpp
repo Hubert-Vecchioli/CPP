@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 00:15:18 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 08:09:30 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:38:00 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,39 @@ char ScalarConverter::convertChar_(const std::string &input)
 	return (static_cast<char>(ret));
 }
 
+int ScalarConverter::convertInt_(const std::string &input)
+{
+	std::stringstream ss(input);
+    int result;
+    ss >> result;
+    if (ss.fail()) {
+        throw std::runtime_error("Invalid input");
+    }
+    return result;
+}
+
+float ScalarConverter::convertFloat_(const std::string &input)
+{
+	std::stringstream ss(input);
+    float result;
+    ss >> result;
+    if (ss.fail()) {
+        throw std::runtime_error("Invalid input");
+    }
+    return result;
+}
+
+double ScalarConverter::convertDouble_(const std::string &input)
+{
+	std::stringstream ss(input);
+    double result;
+    ss >> result;
+    if (ss.fail()) {
+        throw std::runtime_error("Invalid input");
+    }
+    return result;
+}
+
 void ScalarConverter::printChar_(std::string &input, int type)
 {
 	double	d;
@@ -163,12 +196,12 @@ void ScalarConverter::printChar_(std::string &input, int type)
 		if (type != 2)
 		{
 			c = convertChar_(input);
-			d = std::stod(input);
+			d = convertDouble_(input);
 		}
 		else
 		{
 			c = convertChar_(input.substr(0, input.length() - 1));
-			d = std::stod(input.substr(0, input.length() - 1));
+			d = convertDouble_(input.substr(0, input.length() - 1));
 		}
 	} catch (std::exception &e) {
 		std::cout << "char: impossible to display" << std::endl;
@@ -190,26 +223,25 @@ void ScalarConverter::printInt_(std::string &input, int type)
 		|| !input.compare("nanf") || !input.compare("-inf") \
 		|| !input.compare("+inf") || !input.compare("nan"))
 			throw std::exception();
-		if (type != 2)
+		if (type != 2 && type != 0)
 		{
-			i = std::stoi(input);
-			d = std::stod(input);
+			i = convertInt_(input);
+			d = convertDouble_(input);
+		}
+		else if (type == 2)
+		{
+			i = convertInt_(input.substr(0, input.length() - 1));
+			d = convertDouble_(input.substr(0, input.length() - 1));
 		}
 		else
 		{
-			i = std::stoi(input.substr(0, input.length() - 1));
-			d = std::stod(input.substr(0, input.length() - 1));
+			i = static_cast<int>(input.at(0));
+			d = static_cast<double>(input.at(0));
 		}
 	} 
 	catch (std::exception &e) {
 		std::cout << "int: impossible to display" << std::endl;
 		return ;
-	}
-	long long val = std::stoll(input);
-	if (val < INT_MIN || val > INT_MAX)
-	{
-		std::cout << "int: impossible to display" << std::endl;
-		return;
 	}
 	if (d < -2147483648 || d > 2147483647)
 		std::cout << "int: impossible to display" << std::endl;
@@ -232,10 +264,12 @@ void ScalarConverter::printFloat_(std::string &input, int type)
 		return ;
 	}
 	try {
-		if (type != 2)
-			f = std::stof(input);
+		if (type != 2 && type != 0)
+			f = convertFloat_(input);
+		else if (type == 2)
+			f = convertFloat_(input.substr(0, input.length() - 1));
 		else
-			f = std::stof(input.substr(0, input.length() - 1));
+			f = static_cast<float>(input.at(0));
 	}
 	catch (std::exception &e) {
 		std::cout << "float: impossible to display" << std::endl;
@@ -269,10 +303,12 @@ void ScalarConverter::printDouble_(std::string &input, int type)
 		return ;
 	}
 	try {
-		if (type != 2)
-			d = std::stod(input);
+		if (type != 2 && type != 0)
+			d = convertDouble_(input);
+		else if (type == 2)
+			d = convertDouble_(input.substr(0, input.length() - 1));
 		else
-			d = std::stod(input.substr(0, input.length() - 1));
+			d = static_cast<double>(input.at(0));
 	} catch (std::exception &e) {
 		std::cout << "double: impossible to display" << std::endl;
 		return ;
@@ -311,7 +347,7 @@ const char * ScalarConverter::NonDisplayableCharactersException::what() const th
 
 const char * ScalarConverter::UnkownTypeException::what() const throw()
 {
-	return ("Error: the input type is cannot be identied");
+	return ("Error: the input type is be not identified");
 }
 
 const char * ScalarConverter::EmptyInputException::what() const throw()

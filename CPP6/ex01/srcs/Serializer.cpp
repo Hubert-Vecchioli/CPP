@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 06:33:21 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/09 10:39:20 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/09 10:41:33 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/09 11:37:54 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int	main(int ac, char **av)
+Serializer::Serializer(void)
 {
-	if (ac != 2)
-	{
-		std::cout << "Please enter one input" << std::endl;
-		return (1);
-	}
-	try
-	{
-		std::string str = av[1];
-		ScalarConverter::convert(str);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
+}
+
+Serializer::Serializer(Serializer const &src)
+{
+	(void)src;
+}
+
+Serializer::~Serializer(void)
+{
+}
+
+uintptr_t	Serializer::serialize(Data *ptr)
+{
+	uintptr_t	raw;
+
+	raw = reinterpret_cast<uintptr_t>(ptr);
+	return (raw);
+}
+
+Data		*Serializer::deserialize(uintptr_t raw)
+{
+	Data		*ptr;
+
+	ptr = reinterpret_cast<Data *>(raw);
+	return (ptr);
 }

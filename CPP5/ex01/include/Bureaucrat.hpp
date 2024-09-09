@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:53:31 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/06 08:36:07 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/06 10:26:48 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat const &src);
 		~Bureaucrat();
 		Bureaucrat & operator=(Bureaucrat const &src);
+
 		std::string const getName(void) const;
 		int getGrade(void) const;
 		void incrementGrade(void);
