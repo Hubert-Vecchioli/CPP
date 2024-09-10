@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Templates_fct.hpp                                  :+:      :+:    :+:   */
+/*   MutantStack.tpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 15:34:49 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/10 15:27:05 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/10 17:08:22 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/10 17:11:54 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATES_FCT_HPP
- # define TEMPLATES_FCT_HPP
+#ifndef MUTANTSTACK_TPP
+# define MUTANTSTACK_TPP
 
-#include <iostream>
+#include "MutantStack.hpp"
 
-template <typename T, typename F>
-void iter(T *array, unsigned int length, F function)
+template <typename T>
+MutantStack<T>::MutantStack(void) : std::stack<T>()
 {
-	for (unsigned int i = 0; i < length; i++)
-	{
-		function(array[i]);
-	}
 }
 
-template <typename W>
-void print_info(W & number)
+template<typename T>
+MutantStack<T>::MutantStack(MutantStack const &src) : std::stack<T>(src)
 {
-	std::cout << "[" << number << "] " << std::endl;
-	return ;
 }
 
-template <typename V>
-V addOne(V const & number)
+template<typename T>
+MutantStack<T>::~MutantStack(void) 
 {
-	return number + 1;
 }
+
 
 #endif

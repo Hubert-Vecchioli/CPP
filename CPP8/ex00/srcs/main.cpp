@@ -1,40 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Templates_fct.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 15:34:49 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/10 15:27:05 by hvecchio         ###   ########.fr       */
+/*   Created: 2024/09/10 15:46:07 by hvecchio          #+#    #+#             */
+/*   Updated: 2024/09/10 17:03:17 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TEMPLATES_FCT_HPP
- # define TEMPLATES_FCT_HPP
 
+#include "easyfind.hpp"
 #include <iostream>
+#include <bits/stdc++.h>
 
-template <typename T, typename F>
-void iter(T *array, unsigned int length, F function)
+int	main(void)
 {
-	for (unsigned int i = 0; i < length; i++)
+	std::set<int> vec;
+	
+	for (int i = 0; i < 10; i++)
+		vec.insert(i);
+	
+	std::cout << "Test good value: " << std::endl;
+	try
 	{
-		function(array[i]);
+		easyfind(vec, 5);
 	}
+	catch(const std::exception &e)
+	{
+		std::cerr << "Value not found" << std::endl;
+	}
+	try
+	{
+		easyfind(vec, 19);
+	}
+	catch(const std::exception &e)
+	{
+		std::cerr << "Value not found" << std::endl;
+	}
+	return (0);
 }
-
-template <typename W>
-void print_info(W & number)
-{
-	std::cout << "[" << number << "] " << std::endl;
-	return ;
-}
-
-template <typename V>
-V addOne(V const & number)
-{
-	return number + 1;
-}
-
-#endif
