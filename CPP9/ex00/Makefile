@@ -1,10 +1,10 @@
 ###############################################################################
-#********************** Makefile for CPP04 project  **************************#
+#********************** Makefile for CPP09 project  **************************#
 ###############################################################################
 
 #******************************  COMPILER  ***********************************#
 
-NAME			= interface
+NAME			= btc
 CC 				= c++
 CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
@@ -12,11 +12,7 @@ CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 INCS = ./include
 PATHS = main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp
+		BitcoinExchange.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 

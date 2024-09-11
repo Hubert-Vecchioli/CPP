@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:02:55 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/11 01:49:27 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:50:24 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ int main (void)
 		++it;
 	}
 
-	std::cout << std::endl << "Perso tests: " << std::endl;
+	std::cout << std::endl << "Perso tests with std::list: " << std::endl;
 	{
-		std::cout << "Using std::list" << std::endl;
 		std::list<int> mstack;
 		mstack.push_back(5);
 		mstack.push_back(17);
