@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 17:08:22 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/10 17:11:54 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/11 01:46:59 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "MutantStack.hpp"
 
-template <typename T>
+template<typename T>
 MutantStack<T>::MutantStack(void) : std::stack<T>()
 {
 }
@@ -30,5 +30,12 @@ MutantStack<T>::~MutantStack(void)
 {
 }
 
+template<typename T>
+MutantStack<T> &MutantStack<T>::operator=(MutantStack const &src)
+{
+	if (this != &src)
+		std::stack<T>::operator=(src);
+	return (*this);
+}
 
 #endif
