@@ -12,11 +12,8 @@ CFLAGS 			= -Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98
 
 INCS = ./include
 PATHS = main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp
+		PmergeMe.cpp \
+		utils.cpp
 SRCS = $(addprefix $(SRCDIRS)/, $(PATHS))
 SRCDIRS = srcs
 
