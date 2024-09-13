@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:34:49 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/10 15:27:05 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/10 12:19:35 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ void print_info(W & number)
 }
 
 template <typename V>
-V addOne(V const & number)
+void addOne(V & number)
 {
-	return number + 1;
+	number += 1;
+	return ;
 }
 
 #endif
