@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:42:04 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/13 01:33:25 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/13 02:34:28 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class PmergeMe
 	private:
 		std::list<int> listData_;
 		std::vector<int> vectorData_;
+		double duration_list_;
+		double duration_vector_;
 		PmergeMe(void);
 	public:
 		PmergeMe(int ac, char **av);

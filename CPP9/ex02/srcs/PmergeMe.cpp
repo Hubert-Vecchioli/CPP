@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:41:55 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/13 02:13:45 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/13 02:39:13 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PmergeMe::PmergeMe( void )
 {
 }
 
-PmergeMe::PmergeMe(int ac, char **av)
+PmergeMe::PmergeMe(int ac, char **av): duration_list_(0), duration_vector_(0)
 {
 	if (ac ==2)
 	{
@@ -25,15 +25,29 @@ PmergeMe::PmergeMe(int ac, char **av)
     	std::stringstream ss(av[1]);
 		while (std::getline(ss, next_number, ' '))
 		{
+			std::clock_t start_list = std::clock();
 			listData_.push_back(convertInt_(next_number));
+			std::clock_t end_list = std::clock();
+			this->duration_list_ =+ 1000.0 * (end_list - start_list) / CLOCKS_PER_SEC;
+
+			std::clock_t start_vector = std::clock();
 			vectorData_.push_back(convertInt_(next_number));
+			std::clock_t end_vector = std::clock();
+			this->duration_vector_ =+ 1000.0 * (end_vector - start_vector) / CLOCKS_PER_SEC;			
 		}
 		return ;
 	}
 	for(int i = 1; i < ac; i++)
 	{
+		std::clock_t start_list = std::clock();
 		listData_.push_back(convertInt_(av[i]));
+		std::clock_t end_list = std::clock();
+		this->duration_list_ =+ 1000.0 * (end_list - start_list) / CLOCKS_PER_SEC;
+
+		std::clock_t start_vector = std::clock();
 		vectorData_.push_back(convertInt_(av[i]));
+		std::clock_t end_vector = std::clock();
+		this->duration_vector_ =+ 1000.0 * (end_vector - start_vector) / CLOCKS_PER_SEC;		
 	}
 }
 
@@ -66,7 +80,7 @@ void PmergeMe::sort( void )
 	std::clock_t start_list = std::clock();
 	mergeInsertionSort(listData_);
 	std::clock_t end_list = std::clock();
-	double duration_list = 1000.0 * (end_list - start_list) / CLOCKS_PER_SEC; // Temps en microsecondes
+	this->duration_list_ =+ 1000.0 * (end_list - start_list) / CLOCKS_PER_SEC; // Temps en microsecondes
 	
 	std::cout << "After : ";
 	iter(this->listData_, 5, print_info<int>);
@@ -75,10 +89,10 @@ void PmergeMe::sort( void )
 	std::clock_t start_vector = std::clock();
 	mergeInsertionSort(vectorData_); 
 	std::clock_t end_vector = std::clock();
-	double duration_vector = 1000.0 * (end_vector - start_vector) / CLOCKS_PER_SEC; // Temps en microsecondes
+	this->duration_vector_ =+ 1000.0 * (end_vector - start_vector) / CLOCKS_PER_SEC; // Temps en microsecondes
 
-	std::cout << "Time to process a range of " << listData_.size() << " elements with std::list: " << duration_list << " ms" << std::endl;
-	std::cout << "Time to process a range of " << vectorData_.size() << " elements with std::vector: " << duration_vector << " ms" << std::endl;
+	std::cout << "Time to process a range of " << listData_.size() << " elements with std::list: " << this->duration_list_ << " ms" << std::endl;
+	std::cout << "Time to process a range of " << vectorData_.size() << " elements with std::vector: " << this->duration_vector_ << " ms" << std::endl;
 }
 
 int PmergeMe::convertInt_(const std::string &input)
