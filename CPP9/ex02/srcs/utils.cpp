@@ -6,12 +6,13 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 16:47:48 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/12 17:05:50 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/13 01:58:31 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iterator>  // Pour les itérateurs
-#include <list>      // Peut être adapté pour n'importe quel conteneur séquentiel comme std::vector
+#include <iostream>
+#include <iterator>
+#include <list>
 
 template <typename T>
 void mergeInsertionSort(T& container)
@@ -19,7 +20,6 @@ void mergeInsertionSort(T& container)
     if (container.size() <= 1)
         return;
 
-    // Séparation des éléments en paires
     T small, large;
     typename T::iterator it = container.begin();
     while (it != container.end())
@@ -47,10 +47,8 @@ void mergeInsertionSort(T& container)
         }
     }
 
-    // Tri des petites valeurs avec insertion récursive
     mergeInsertionSort(small);
 
-    // Insertion des grandes valeurs dans les bonnes positions
     typename T::iterator large_it = large.begin();
     while (large_it != large.end())
     {
@@ -63,6 +61,29 @@ void mergeInsertionSort(T& container)
         ++large_it;
     }
 
-    // Remettre la liste triée dans le conteneur original
     container = small;
+}
+
+
+template <typename T, typename F>
+void iter(T &container, unsigned int max, F function)
+{
+    unsigned int i = 0;
+    for (typename T::iterator it = container.begin(); it != container.end(); ++it, ++i)
+    {
+        if (i > max)
+        {
+            std::cout << " [...]";
+            return;
+        }
+        function(*it);
+    }
+}
+
+
+template <typename W>
+void print_info(W & number)
+{
+	std::cout << " " << number;
+	return ;
 }
