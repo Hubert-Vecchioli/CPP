@@ -6,7 +6,7 @@
 /*   By: hvecchio <hvecchio@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 15:41:55 by hvecchio          #+#    #+#             */
-/*   Updated: 2024/09/13 01:58:07 by hvecchio         ###   ########.fr       */
+/*   Updated: 2024/09/13 02:13:45 by hvecchio         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,10 +88,12 @@ int PmergeMe::convertInt_(const std::string &input)
     ss >> result;
     if (ss.fail())
         throw std::runtime_error("Invalid input");
+	if (result < 0)
+		throw InvalidInputException();
     return result;
 }
 
 const char* PmergeMe::InvalidInputException::what() const throw()
 {
-	return ("Error: Invalid input.");
+	return ("Error");
 }
